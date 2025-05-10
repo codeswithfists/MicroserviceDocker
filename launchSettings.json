@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "apigateway",
+      "composeLaunchUrl": "/scalar/v1",
+      "serviceActions": {
+        "postgres": "StartWithoutDebugging",
+        "pgweb": "StartWithoutDebugging",
+        "blazorapp": "StartDebugging",
+        "webapi1": "StartDebugging",
+        "webapi2": "StartDebugging",
+        "apigateway": "StartDebugging"
+      }
+    }
+  }
+}
