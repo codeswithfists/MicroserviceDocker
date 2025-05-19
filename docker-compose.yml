@@ -43,12 +43,12 @@ services:
     networks:
       - backend
 
-  blazorapp:
-    image: ${DOCKER_REGISTRY-}blazorapp
-    build:
-      context: .
-      dockerfile: BlazorApp/BlazorApp/Dockerfile
-    ports:
-      - "8080:8080"
-    networks:
-      - frontend
+  # blazorapp:
+  #   image: ${DOCKER_REGISTRY-}blazorapp
+  #   build:
+  #     context: .
+  #     dockerfile: BlazorApp/BlazorApp/Dockerfile
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - frontend

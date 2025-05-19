@@ -1,0 +1,30 @@
+meta {
+  name: token
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:7080/realms/shadow/protocol/openid-connect/token
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "boss",
+    "password": "123"
+  }
+}
+
+body:form-urlencoded {
+  grant_type: password
+  client_id: api1
+  client_secret: s3kf83qf3mczYsY9deTERK6WQoZJ9qEM
+  username: boss
+  password: 123
+}
+
+vars:post-response {
+  access_token_api1: res.body.access_token
+}

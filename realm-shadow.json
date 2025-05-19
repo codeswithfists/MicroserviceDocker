@@ -1,0 +1,288 @@
+{
+    "id": "shadow",
+    "realm": "shadow",
+    "displayName": "The Shadow Realm",
+    "enabled": true,
+    "sslRequired": "none",
+    "roles": {
+        "realm": [
+            {
+                "id": "db4a5805-8737-456b-8a21-8ca8e7eb9a0e",
+                "name": "user",
+                "description": "default role for all users",
+                "containerId": "shadow"
+            },
+            {
+                "id": "f1a200b1-afb0-487d-8336-ad0c4482d9bc",
+                "name": "admin",
+                "description": "admin role = full control",
+                "containerId": "shadow"
+            }
+        ],
+        "client": {
+            "api1": [
+                {
+                    "id": "a73c59e1-753b-4b63-a137-084f84c8bca3",
+                    "name": "special1",
+                    "description": "A special role just for api1",
+                    "containerId": "c9acb089-54d7-470b-b294-328541136e30"
+                }
+            ]
+        }
+    },
+    "clients": [
+        {
+            "id": "c9acb089-54d7-470b-b294-328541136e30",
+            "clientId": "api1",
+            "name": "api1",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                ""
+            ],
+            "webOrigins": [
+                ""
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "realm_client": "false",
+                "oidc.ciba.grant.enabled": "false",
+                "client.secret.creation.time": "1747280359",
+                "backchannel.logout.session.required": "true",
+                "login_theme": "keycloak",
+                "display.on.consent.screen": "false",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "b099f2ea-a886-4e78-922c-e17af0a2b39b",
+            "clientId": "api2",
+            "name": "api2",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                ""
+            ],
+            "webOrigins": [
+                ""
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "realm_client": "false",
+                "oidc.ciba.grant.enabled": "false",
+                "client.secret.creation.time": "1747326535",
+                "backchannel.logout.session.required": "true",
+                "display.on.consent.screen": "false",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "47c66348-789d-43a7-9d36-cac808815c46",
+            "clientId": "apigateway",
+            "name": "apigateway",
+            "description": "",
+            "rootUrl": "https://localhost:7007",
+            "adminUrl": "https://localhost:7007",
+            "baseUrl": "https://localhost:7007/scalar",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "secret": "**********",
+            "redirectUris": [
+                "https://localhost:7007/*"
+            ],
+            "webOrigins": [
+                "https://localhost:7007"
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": true,
+            "directAccessGrantsEnabled": true,
+            "serviceAccountsEnabled": true,
+            "publicClient": false,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "realm_client": "false",
+                "oidc.ciba.grant.enabled": "false",
+                "client.secret.creation.time": "1747254254",
+                "backchannel.logout.session.required": "true",
+                "display.on.consent.screen": "false",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "protocolMappers": [
+                {
+                    "id": "4ec106f0-a094-4e30-85e6-4aeed0c00b59",
+                    "name": "Client Host",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientHost",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientHost",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "40af6fff-651f-45ac-ab55-2b1acd408cba",
+                    "name": "Client ID",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "client_id",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "client_id",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "ad9db074-f08d-4e5c-8769-22f320fb452a",
+                    "name": "Client IP Address",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientAddress",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientAddress",
+                        "jsonType.label": "String"
+                    }
+                }
+            ],
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "api2_scope",
+                "microprofile-jwt",
+                "api1_scope"
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": "65e08a0c-b3b4-40e5-b3eb-83965435285c",
+            "email": "boss@email.com",
+            "username": "boss",
+            "firstName": "Boss",
+            "lastName": "Man",
+            "enabled": true,
+            "emailVerified": true,
+            "credentials": [
+                {
+                    "temporary": false,
+                    "type": "password",
+                    "value": "123"
+                }
+            ]
+        },
+        {
+            "id": "321778b5-6552-4670-b29f-fcf720601cb6",
+            "email": "worker@email.com",
+            "username": "worker",
+            "firstName": "Worker",
+            "lastName": "Man",
+            "enabled": true,
+            "emailVerified": true,
+            "credentials": [
+                {
+                    "temporary": false,
+                    "type": "password",
+                    "value": "123"
+                }
+            ]
+        }
+    ]
+}

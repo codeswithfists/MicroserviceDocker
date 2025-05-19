@@ -1,0 +1,15 @@
+meta {
+  name: api1_hello2
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://localhost:7007/api1/hello2
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token_gateway}}
+}
