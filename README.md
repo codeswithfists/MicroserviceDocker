@@ -1,7 +1,6 @@
 # MicroserviceDocker
 
-Pretty basic microservice architecture using YARP as an API gateway and Keycloak for authentication.
-From the gateway service, navigate to /scalar to view the OpenApi documentation.
+Basic microservice architecture using YARP as an API gateway and Keycloak for authentication. From the gateway service, navigate to /scalar to view the OpenApi documentation.
 
 Multiple OAuth2 authentication flow configurations are demonstrated for Api1:
 
@@ -10,10 +9,11 @@ Multiple OAuth2 authentication flow configurations are demonstrated for Api1:
 - Resource Owner Password Credentials Flow
 - Implicit Flow
 
+![image](https://github.com/user-attachments/assets/f534d969-b675-45fe-ab64-efabba7d21bc)
+
 There is also a [Bruno](https://www.usebruno.com/) collection for testing the API endpoints.
 
-Didn't really test the Docker side of things too much, but it should mostly work - will require some
-config changes. Also note that Docker is not currently setup to use https.
+Didn't really test the Docker side of things too much, but it should mostly work - will require some config changes. Also note that Docker is not currently setup to use https.
 
 ## Keycloak Notes
 
@@ -26,19 +26,12 @@ config changes. Also note that Docker is not currently setup to use https.
     - boss = user, admin
     - worker = user, api1.special
 
-The provided `real-shadow.json` file can be imported to start, but you will need to still add/modify a few things.
+The provided `realm-shadow.json` file can be imported to start, but you will need to still add/modify a few things.
 
 You will likely need to regenerate the client secret for the `apigateway` client.
 
 ---
 
-- Modified the 'client roles' and 'realm roles' mappers in the
-'roles' Client scope to combine the roles from both groups into a
-single 'roles' array property on the token. This is where .NET
-Authorization looks for roles.
-
-- For a user, if a role mapping is assigned for a client role (ie. not a realm role),
-then it seems as though that client is added to the 'aud' claim regardless of any scopes requested.
-
-- There is an Audience Resolve mapper on the 'roles' client scope - not sure if
-that's there by default?
+- Modified the 'client roles' and 'realm roles' mappers in the 'roles' Client scope to combine the roles from both groups into a single 'roles' array property on the token. This is where .NET Authorization looks for roles.
+- For a user, if a role mapping is assigned for a client role (ie. not a realm role), then it seems as though that client is added to the 'aud' claim regardless of any scopes requested.
+- There is an Audience Resolve mapper on the 'roles' client scope - not sure if that's there by default?
