@@ -40,14 +40,12 @@ builder.Services.AddAuthorizationBuilder()
 
 // need to configure CORS to allow the Blazor app to call this API
 builder.Services.AddCors(options =>
-{
     options.AddDefaultPolicy(builder => builder
         .AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader()
-        .WithExposedHeaders("X-Total-Count")
-        .SetIsOriginAllowedToAllowWildcardSubdomains());
-});
+    )
+);
 
 var app = builder.Build();
 

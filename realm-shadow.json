@@ -7,13 +7,11 @@
     "roles": {
         "realm": [
             {
-                "id": "db4a5805-8737-456b-8a21-8ca8e7eb9a0e",
                 "name": "user",
                 "description": "default role for all users",
                 "containerId": "shadow"
             },
             {
-                "id": "f1a200b1-afb0-487d-8336-ad0c4482d9bc",
                 "name": "admin",
                 "description": "admin role = full control",
                 "containerId": "shadow"
@@ -22,7 +20,6 @@
         "client": {
             "api1": [
                 {
-                    "id": "a73c59e1-753b-4b63-a137-084f84c8bca3",
                     "name": "special1",
                     "description": "A special role just for api1",
                     "containerId": "c9acb089-54d7-470b-b294-328541136e30"
@@ -89,7 +86,6 @@
             ]
         },
         {
-            "id": "b099f2ea-a886-4e78-922c-e17af0a2b39b",
             "clientId": "api2",
             "name": "api2",
             "description": "",
@@ -145,7 +141,6 @@
             ]
         },
         {
-            "id": "47c66348-789d-43a7-9d36-cac808815c46",
             "clientId": "apigateway",
             "name": "apigateway",
             "description": "",
@@ -187,7 +182,6 @@
             "nodeReRegistrationTimeout": -1,
             "protocolMappers": [
                 {
-                    "id": "4ec106f0-a094-4e30-85e6-4aeed0c00b59",
                     "name": "Client Host",
                     "protocol": "openid-connect",
                     "protocolMapper": "oidc-usersessionmodel-note-mapper",
@@ -202,7 +196,6 @@
                     }
                 },
                 {
-                    "id": "40af6fff-651f-45ac-ab55-2b1acd408cba",
                     "name": "Client ID",
                     "protocol": "openid-connect",
                     "protocolMapper": "oidc-usersessionmodel-note-mapper",
@@ -217,7 +210,6 @@
                     }
                 },
                 {
-                    "id": "ad9db074-f08d-4e5c-8769-22f320fb452a",
                     "name": "Client IP Address",
                     "protocol": "openid-connect",
                     "protocolMapper": "oidc-usersessionmodel-note-mapper",
@@ -249,11 +241,72 @@
                 "microprofile-jwt",
                 "api1_scope"
             ]
-        }
+        },
+        {
+            "clientId": "blazorapp",
+            "name": "blazorapp",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://localhost:7065/authentication/login-callback"
+            ],
+            "webOrigins": [
+                "https://localhost:7065"
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "realm_client": "false",
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "post.logout.redirect.uris": "https://localhost:7065/authentication/logout-callback",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "display.on.consent.screen": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "organization",
+                "api2_scope",
+                "microprofile-jwt",
+                "api1_scope"
+            ],
+            "access": {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+            }
     ],
     "users": [
         {
-            "id": "65e08a0c-b3b4-40e5-b3eb-83965435285c",
             "email": "boss@email.com",
             "username": "boss",
             "firstName": "Boss",
@@ -269,7 +322,6 @@
             ]
         },
         {
-            "id": "321778b5-6552-4670-b29f-fcf720601cb6",
             "email": "worker@email.com",
             "username": "worker",
             "firstName": "Worker",

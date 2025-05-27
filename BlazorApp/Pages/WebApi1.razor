@@ -1,8 +1,10 @@
 ﻿@page "/api1"
 
-@inject IHttpClientFactory HttpClientFactory
-
 @using Microsoft.AspNetCore.Authorization
+@using System.Security.Claims
+
+@inject IHttpClientFactory HttpClientFactory
+@inject AuthenticationStateProvider AuthStateProvider
 
 @attribute [Authorize]
 
@@ -19,10 +21,25 @@
 <button class="btn btn-primary" @onclick="AdminHello">AdminHello</button>
 <p>Result: @result_AdminHello</p>
 
+<h3>User Claims</h3>
+<ul>
+    @foreach (var claim in claims)
+    {
+        <li><b>@claim.Type:</b> @claim.Value</li>
+    }
+</ul>
+
 
 @code {
     private string result_Hello = string.Empty;
     private string result_AdminHello = string.Empty;
+    private IEnumerable<Claim> claims = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        claims = authState.User.Claims.ToList();
+    }
 
     private async Task Hello()
     {
