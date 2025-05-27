@@ -18,14 +18,14 @@ There is also a [Bruno](https://www.usebruno.com/) collection for testing the AP
 
 ## Keycloak Notes
 
-* 3 Clients: apigateway, api1, api2
-    - api1 has 'special' role
+* 4 Clients: apigateway, api1, api2, blazorapp
+    - api1 has the 'special' role
 * 2 Client scopes: api1_scope, api2_scope
     - both scopes should have Audience mapper for respective client
 * 2 Realm roles: admin, user
 * 2 Users: boss, worker
-    - boss = user, admin
-    - worker = user, api1.special
+    - boss roles = user, admin
+    - worker roles = user, api1.special
 
 > [!TIP]
 > The provided `realm-shadow.json` file can be imported to start, but you will need to still add/modify a few things. ie. create the `api1_scope` and `api2_scope` client scopes with the associated audience mappers.
