@@ -13,6 +13,9 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1-Preview.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
+
+    <!-- this package is not strictly required - provides a few extension methods to enhance OpenAPI documents -->
+    <PackageReference Include="Scalar.AspNetCore.Microsoft" Version="2.4.3" />
   </ItemGroup>
 
 </Project>

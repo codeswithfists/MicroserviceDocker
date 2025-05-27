@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using Scalar.AspNetCore;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,7 @@ builder.Services.AddOpenApi(o =>
             Title = "API 1",
             Version = "v1",
             Description = "API 1 description.",
-            Contact = new OpenApiContact { Name = "Kevin Reid", Email = "kevinreid2023@outlook.com" },
+            Contact = new OpenApiContact { Name = "Kevin Reid", Email = "kevin@email.com" },
             License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") },
             TermsOfService = new Uri("https://opensource.org/licenses/MIT")
         };
@@ -34,8 +35,8 @@ builder.Services.AddOpenApi(o =>
                 },
                 AuthorizationCode = new OpenApiOAuthFlow
                 {
-                    AuthorizationUrl = new Uri($"http://localhost:7080/realms/shadow/protocol/openid-connect/auth"),
-                    TokenUrl = new Uri($"http://localhost:7080/realms/shadow/protocol/openid-connect/token"),
+                    AuthorizationUrl = new Uri($"{builder.Configuration["JwtBearerOptions:Authority"]}/protocol/openid-connect/auth"),
+                    TokenUrl = new Uri($"{builder.Configuration["JwtBearerOptions:Authority"]}/protocol/openid-connect/token"),
                     Scopes = new Dictionary<string, string>
                     {
                         { "api1_scope", "api1_scope" }
@@ -43,7 +44,7 @@ builder.Services.AddOpenApi(o =>
                 },
                 ClientCredentials = new OpenApiOAuthFlow
                 {
-                    TokenUrl = new Uri($"http://localhost:7080/realms/shadow/protocol/openid-connect/token"),
+                    TokenUrl = new Uri($"{builder.Configuration["JwtBearerOptions:Authority"]}/protocol/openid-connect/token"),
                     Scopes = new Dictionary<string, string>
                     {
                         { "api1_scope", "api1_scope" }
@@ -75,6 +76,9 @@ builder.Services.AddOpenApi(o =>
 
         return Task.CompletedTask;
     });
+
+    // required if using Scalar.AspNetCore extensions package
+    o.AddScalarTransformers();
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -94,9 +98,15 @@ app.MapOpenApi();
 
 app.MapGet("/hello", () => "Hello from Api 1");
 
-app.MapGet("/admin/hello", () => "Hello securely from Api 1. You have the 'admin' role.").RequireAuthorization("Admin");
+app.MapGet("/admin/hello", () => "Hello securely from Api 1. You have the 'admin' role.")
+    .Stable()
+    .RequireAuthorization("Admin");
 
-app.MapGet("/special", () => "You are special to Api 1").RequireAuthorization("Special");
+app.MapGet("/special", () => "You are special to Api 1")
+    .Experimental()
+    .RequireAuthorization("Special");
+
+app.MapGet("/deprecated", () => "Deprecated endpoint in Api 1").Deprecated();
 
 app.MapGet("/divide/{num1}/{num2}", (int num1, int num2) =>
     {

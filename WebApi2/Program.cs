@@ -20,7 +20,7 @@ builder.Services.AddOpenApi(o =>
             Title = "API 2",
             Version = "v1",
             Description = "API 2 description.",
-            Contact = new OpenApiContact { Name = "Kevin Reid", Email = "kevinreid2023@outlook.com" },
+            Contact = new OpenApiContact { Name = "Kevin Reid", Email = "kevin@email.com" },
             License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") },
             TermsOfService = new Uri("https://opensource.org/licenses/MIT")
         };
