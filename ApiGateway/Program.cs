@@ -38,11 +38,25 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorizationBuilder()
     .AddPolicy("Admin", policy => policy.RequireRole("admin"));
 
+// need to configure CORS to allow the Blazor app to call this API
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder => builder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .WithExposedHeaders("X-Total-Count")
+        .SetIsOriginAllowedToAllowWildcardSubdomains());
+});
+
 var app = builder.Build();
 
+app.UseHttpsRedirection();
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseRateLimiter();
+
 app.MapReverseProxy();
 
 app.MapScalarApiReference(options =>

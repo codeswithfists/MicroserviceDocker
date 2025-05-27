@@ -123,7 +123,8 @@ app.MapGet("/divide/{num1}/{num2}", (int num1, int num2) =>
     .Produces<int>(StatusCodes.Status200OK)
     .Produces<string>(StatusCodes.Status401Unauthorized)
     .ProducesValidationProblem(StatusCodes.Status400BadRequest)
-    .RequireAuthorization("User");
+    .RequireAuthorization("User")
+    .Stable();
 
 app.MapGet("/claims", (ClaimsPrincipal principal) => principal.Claims.SelectMany(c => new[] { $"{c.Type}: {c.Value}" }))
     .RequireAuthorization();

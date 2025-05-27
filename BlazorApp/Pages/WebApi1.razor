@@ -1,0 +1,40 @@
+﻿@page "/api1"
+
+@inject IHttpClientFactory HttpClientFactory
+
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
+
+
+<PageTitle>WebApi1</PageTitle>
+
+<h1>WebApi1</h1>
+
+<p>This component allows calling endpoints on WebApi1.</p>
+
+<button class="btn btn-primary" @onclick="Hello">Hello</button>
+<p>Result: @result_Hello</p>
+
+<button class="btn btn-primary" @onclick="AdminHello">AdminHello</button>
+<p>Result: @result_AdminHello</p>
+
+
+@code {
+    private string result_Hello = string.Empty;
+    private string result_AdminHello = string.Empty;
+
+    private async Task Hello()
+    {
+        using var client = HttpClientFactory.CreateClient("WebApi1");
+        var response = await client.GetAsync("hello");
+        result_Hello = await response.Content.ReadAsStringAsync();
+    }
+
+    private async Task AdminHello()
+    {
+        using var client = HttpClientFactory.CreateClient("WebApi1");
+        var response = await client.GetAsync("admin/hello");
+        result_AdminHello = await response.Content.ReadAsStringAsync();
+    }
+}

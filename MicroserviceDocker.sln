@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi1", "WebApi1\WebApi1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi2", "WebApi2\WebApi2.csproj", "{1FF8A097-F519-42DF-B925-06B2A1C955F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp\BlazorApp.csproj", "{3055DB40-1280-4044-8886-4D59A9A0EB07}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Client", "BlazorApp\BlazorApp.Client\BlazorApp.Client.csproj", "{1E3263E9-C2A5-42B2-8281-AC03E84C28A6}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{BBEF1D25-43BC-48B4-B840-2F4DB1990C8C}"
@@ -20,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{F9ADEE2B-41D5-468E-B14A-057F05B98276}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +33,6 @@ Global
 		{1FF8A097-F519-42DF-B925-06B2A1C955F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FF8A097-F519-42DF-B925-06B2A1C955F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FF8A097-F519-42DF-B925-06B2A1C955F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3055DB40-1280-4044-8886-4D59A9A0EB07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3055DB40-1280-4044-8886-4D59A9A0EB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3055DB40-1280-4044-8886-4D59A9A0EB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3055DB40-1280-4044-8886-4D59A9A0EB07}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E3263E9-C2A5-42B2-8281-AC03E84C28A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E3263E9-C2A5-42B2-8281-AC03E84C28A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E3263E9-C2A5-42B2-8281-AC03E84C28A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E3263E9-C2A5-42B2-8281-AC03E84C28A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +41,10 @@ Global
 		{BBEF1D25-43BC-48B4-B840-2F4DB1990C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBEF1D25-43BC-48B4-B840-2F4DB1990C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBEF1D25-43BC-48B4-B840-2F4DB1990C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9ADEE2B-41D5-468E-B14A-057F05B98276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9ADEE2B-41D5-468E-B14A-057F05B98276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9ADEE2B-41D5-468E-B14A-057F05B98276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9ADEE2B-41D5-468E-B14A-057F05B98276}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
